@@ -18,7 +18,7 @@ function SubmitButton() {
 
   return (
     <Button type="submit" disabled={pending}>
-      {pending ? 'Creando...' : 'Crear Factura'}
+      {pending ? "Creating..." : "Create Invoice"}
     </Button>
   );
 }
@@ -49,7 +49,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
         {/* Nombre del Cliente */}
         <div className="mb-4">
           <label htmlFor="customer" className="mb-2 block text-sm font-medium">
-            Elegir cliente
+            Client
           </label>
           <div className="relative">
             <select
@@ -84,7 +84,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
         {/* Monto de la Factura */}
         <div className="mb-4">
           <label htmlFor="amount" className="mb-2 block text-sm font-medium">
-            Elegir un monto
+            Amount
           </label>
           <div className="relative mt-2 rounded-md">
             <div className="relative">
@@ -93,7 +93,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                 name="amount"
                 type="number"
                 step="0.01"
-                placeholder="Ingresar monto en USD"
+                placeholder="Enter amount in USD"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500 
                 disabled:bg-gray-100 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none"
                 aria-describedby="amount-error"
@@ -115,7 +115,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
         {/* Estado de la Factura */}
         <fieldset disabled={isDisabled}>
           <legend className="mb-2 block text-sm font-medium">
-            Establecer el estado de la factura
+            Status
           </legend>
           <div className="rounded-md border border-gray-200 bg-white px-[14px] py-3">
             <div className="flex gap-4">
@@ -133,7 +133,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                   htmlFor="pending"
                   className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-600"
                 >
-                  Pendiente <ClockIcon className="h-4 w-4" />
+                  Pending <ClockIcon className="h-4 w-4" />
                 </label>
               </div>
               <div className="flex items-center">
@@ -149,7 +149,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                   htmlFor="paid"
                   className="ml-2 flex cursor-pointer items-center gap-1.5 rounded-full bg-green-500 px-3 py-1.5 text-xs font-medium text-white"
                 >
-                  Pagado <CheckIcon className="h-4 w-4" />
+                  Paid <CheckIcon className="h-4 w-4" />
                 </label>
               </div>
             </div>
@@ -168,7 +168,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
         <Link
           href="/dashboard/invoices"
           className={`flex h-10 items-center rounded-lg bg-gray-100 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200 
-          ${isDisabled ? 'pointer-events-none opacity-50' : ''}`}
+          ${isDisabled ? "pointer-events-none opacity-50" : ""}`}
         >
           Cancelar
         </Link>

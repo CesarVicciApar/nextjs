@@ -12,19 +12,19 @@ export const metadata: Metadata = {
   title: 'Invoices',
 };
 
-// nextjs los envia en las props,  desde la url podemos extraer los search params.
 export default async function Page(props: {
+  // nextjs los envia en las props, desde la url podemos extraer los search params.
   searchParams?: Promise<{
     query?: string;
     page?: string;
   }>;
 }) {
-
   const searchParams = await props.searchParams;
   const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 1;
   const totalPages = await fetchInvoicesPages(query);
   
+
   return (
     <div className="w-full">
       <div className="flex w-full items-center justify-between">

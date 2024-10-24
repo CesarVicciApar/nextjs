@@ -8,10 +8,13 @@ import { usePathname, useSearchParams } from "next/navigation";
 
 export default function Pagination({ totalPages }: { totalPages: number }) {
   // NOTE: Uncomment this code in Chapter 11
-
+  // const totalPages = await fetchInvoicesPages(query);
+  
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const searchParams = useSearchParams(); 
+  
   const currentPage = Number(searchParams.get("page")) || 1;
+  console.log('Search Params:', searchParams.get("page"));
   const allPages = generatePagination(currentPage, totalPages);
 
   const createPageURL = (pageNumber: number | string) => {
